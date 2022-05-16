@@ -227,7 +227,6 @@ function addbookitem($book){
     }
 }
 /*Show booked book item */
-/*show data base data For Admin*/
 function bookitem1($id){
     $con=$GLOBALS['con'];
     $sql="select * from booked_item as bi inner join book as b on bi.book_id=b.id where bi.user_id=?";
@@ -242,5 +241,18 @@ function bookitem1($id){
         }
     }
     return $users;
+}
+/*Delete Book Item*/
+function delbookitem($id){
+    $con=$GLOBALS['con'];
+    $sql="delete from booked_item where book_id=?";
+    $st=$con->prepare($sql);
+    $st->bind_param("i",$id);
+    if($st->execute()){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 ?>

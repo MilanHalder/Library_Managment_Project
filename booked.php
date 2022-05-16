@@ -99,18 +99,17 @@ $bi=getBookItem($i);
             <th>Booked Item</th>
             <th>Action</th>
         </tr>
-        <?php foreach($bi as $a){ $i=0;$i++;?>
+        <?php foreach($bi as $a){ $i=0;?>
         <tr>
-            <td><?=$i?></td>
-           
+            <td><?=$i++?></td>
             <td><?=$a['Bname']?></td>
             <td><form action="index.php" method="post">
-                <input type="hidden" name="id" value="<?=$a['id']?>">
+                <input type="text" name="id" value="<?=$a['id']?>">
                 <input type="submit" value="DELETE" name="dlbi" >
                 </form>
             </td>
         </tr>
-        <?php  } ?>
+        <?php   }?>
         </table>
         </center>
       </div>

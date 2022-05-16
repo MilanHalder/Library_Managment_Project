@@ -11,12 +11,12 @@ include 'dao.php';
         if($re){
           session_start();
           $_SESSION['n']=$nam;
-          header("Location:disp.php");
+          header("Location:logi.php");
         }
         else{
           session_start();
           $_SESSION['msg']="user credential is wrong!!!";
-          header("Location:regi.php");
+          header("Location:404.php");
         }
     }
     /*for Login*/
@@ -36,7 +36,7 @@ if(isset($_POST['login'])){
   else{
      session_start();
      $_SESSION['msg']="user credential is wrong!!!";
-    header("location:logi.php");
+    header("location:404.php");
   }
 }
 /*Admin Login */
@@ -52,7 +52,7 @@ if(isset($_POST['Submit'])){
   else{
      session_start();
      $_SESSION['msg']="Admin credential is wrong!!!";
-     header("location:admin.php");
+     header("location:404.php");
   }
 }
 /*Show Database Data For Student*/
@@ -139,23 +139,7 @@ $ad=getadmin();
   deladmin($id);
   header("Location:addadmin.php");
 }
-/*Show Database Data For Book Booked */
 $bok=getBooked();
-/*Book Booked Add Database */
-// if(isset($_POST['Booked'])){
-//   $m=getIMG();
-//   foreach ($m as $h){
-//     $bn=$h['Bname'];
-//     $booked=array("name"=>$bn);
-//     $re=addBooked($user);
-//     if($re){
-//       header("Location:logi.php");
-//     }
-//     else{
-//       header("Location:regi.php");
-//     }
-//   }
-// }
 /*Delete Book Booked*/
 if(isset($_POST['delete'])){
   $id=$_POST['id'];
@@ -179,6 +163,11 @@ function getBookItem($id){
   $bi=bookitem1($id);
   return $bi;
 }
-
+/*Delete Book item */
+if(isset($_POST['dlbi'])){
+  $id=$_POST['id'];
+  delbookitem($id);
+  header("Location:booked.php");
+}
 //select * from booked_item as bi inner join book as b on bi.book_id=b.id where bi.user_id=?;
 ?>

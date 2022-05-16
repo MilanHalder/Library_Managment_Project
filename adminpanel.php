@@ -124,28 +124,8 @@ else{
         
         
         <center>
-        <table border=1px>
-        <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Booked</th>
-        </tr>
-        <?php foreach($bok as $a){?>
-        <tr>
-            <td><?=$a['id']?></td>
-            <td><?=$a['Email']?></td>
-            <td><?=$a['Booked']?></td>
-            <td><form action="index.php" method="post">
-                <input type="hidden" name="id" value="<?=$a['id']?>">
-                <input type="submit" value="DELETE" name="delete" >
-                </form>
-            </td>
-        </tr>
-        <?php } ?>
-        </table>
+        <h1>Thanks For Comming Adminpanel</h1>
         </center>
-
-
       </div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -189,7 +169,6 @@ else{
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 </html>
-
 <?php }
 session_destroy();
 

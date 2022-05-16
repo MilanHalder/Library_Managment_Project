@@ -19,7 +19,7 @@ if((emailid.charAt(emailid.length-4) != '.') && (emailid.charAt(emailid.length-3
     document.getElementById('email_txt').innerHTML = " **<div class='error_color'>.invalid Email Id....</div>";
     return false;  
 }
-if(password==null || password==""||password<5) {
+if(password==null || password==""||password<8) {
     document.getElementById('password_txt').innerHTML = " **<div class='error_color'>Please Enter Password</div>";
     return false;
 }
