@@ -13,7 +13,7 @@
   <p>
   Try again.....please check email id & Password
   </p>
-<a href="page-login.php">GO LOGIN PAGE....</a>
+<a href="logi.php">GO LOGIN PAGE....</a>
 </div>
 </body>
 </html>

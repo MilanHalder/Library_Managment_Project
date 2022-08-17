@@ -104,7 +104,7 @@ $bi=getBookItem($i);
             <td><?=$i++?></td>
             <td><?=$a['Bname']?></td>
             <td><form action="index.php" method="post">
-                <input type="text" name="id" value="<?=$a['id']?>">
+                <input type="hidden" name="id" value="<?=$a['id']?>">
                 <input type="submit" value="DELETE" name="dlbi" >
                 </form>
             </td>
